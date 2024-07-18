@@ -1,0 +1,104 @@
+
+
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactame</title>
+    <!-- Font Awesome -->
+    <link href="./assets/vendor/font-awesome/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/vendor/font-awesome/brands.css" rel="stylesheet" />
+    <link href="./assets/vendor/font-awesome/solid.css" rel="stylesheet" />
+    <!-- Normalize -->
+    <link rel="stylesheet" href="./assets/vendor/normalize/normalize.css">
+    <!-- Bootstrap 5.3 -->
+    {% bootstrap_css %}
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'css/stylesContactame.css' %}">    <!-- EmailJS-->
+    <!-- EmailJS-->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://kit.fontawesome.com/92cff1066a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sebastian Rivera - Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="{% url 'sobreMi' %}">Sobre Mi</a>
+                    <a class="nav-link" href="{% url 'contactame' %}">Contactame</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <H2 class="text-center">Formulario de contacto</H2>
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                
+                <div class="card-body">
+                    <form id="contactForm" onsubmit="enviarCorreo(); return false;">
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="From_name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="From_email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "UThgtTzcmG7shAIhb",
+        });
+    })();
+</script>
+
+
+<!-- Bootstrap JS -->
+{% bootstrap_javascript %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- JQuery -->
+<script src="./assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+<!-- Scripts personalizados -->
+
+
+
+
+
+
+
+
+</body>
+</html>

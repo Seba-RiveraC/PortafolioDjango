@@ -1,0 +1,60 @@
+/*Importamos el archivo de las fuentes CSS para poder utilizarlas en nuestro proyecto solo con la propiedad font-family: ...*/
+
+@import url('fonts.css');
+
+
+
+
+
+
+#imagenMain{
+
+    background-image: url(/assets/img/img1.jpg);
+    color: black;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+h1{
+    color:black;
+}
+
+
+body{
+
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+};
+
+.btnContactame {
+    border: 20px;
+    border-radius: 30px;
+}
+
+a {
+    color: white; 
+    text-decoration: none; 
+}
+
+#cardInferior{
+
+background-color: black;
+color: white;
+};
+
+.card-img-top {
+    width: 200px;
+    height: 133px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+
+
+body{background-color: black;}
